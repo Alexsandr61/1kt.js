@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Таблица с числами</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 300px;
+    }
+    td {
+      border: 1px solid #000;
+      text-align: center;
+      padding: 8px;
+    }
+    .orange {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tbody>
+      <script>
+        const numbers = Array.from({ length: 30 }, () => Math.floor(Math.random() * 100));
+
+        for(let row = 0; row < 5; row++) {
+          document.write('<tr>');
+          for(let col = 0; col < 6; col++) {
+            let num = numbers[row * 6 + col];
+            let cls = num >= 50 ? 'orange' : '';
+            document.write(`<td class="${cls}">${num}</td>`);
+          }
+          document.write('</tr>');
+        }
+      </script>
+    </tbody>
+  </table>
+</body>
+</html>
